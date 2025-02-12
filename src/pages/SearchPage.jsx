@@ -4,18 +4,13 @@ export default function SearchBarPage() {
   const { moviesList } = useMoviesContext();
   return (
     <>
-      {moviesList.map((elem) => {
-        return (
-          <MovieCard
-            key={elem.id}
-            title={elem.title || elem.name}
-            titleOr={elem.original_title || elem.original_name}
-            language={elem.original_language}
-            rating={elem.vote_average}
-            img={`https://image.tmdb.org/t/p/w342` + elem.poster_path}
-          ></MovieCard>
-        );
-      })}
+      <div className="bg-gray-500">
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-3 ">
+          {moviesList.map((elem) => {
+            return <MovieCard key={elem.id} movie={elem}></MovieCard>;
+          })}
+        </div>
+      </div>
     </>
   );
 }

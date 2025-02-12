@@ -1,18 +1,26 @@
-import { hasFlag } from "country-flag-icons";
-import Stars from "./Stars";
-export default function MovieCard({ title, titleOr, language, rating, img }) {
+import BackCard from "./BackCard";
+import FrontCard from "./frontCard";
+
+import React, { useState } from "react";
+export default function MovieCard({ movie }) {
+  const [side, setSide] = useState(false);
+  const handleMouseEnter = () => {
+    setSide(true);
+  };
+  const handleMouseLeave = () => {
+    setSide(false);
+  };
   return (
     <>
-      <div className="py-4">
-        <h1 className="text-blue-600">title={title}</h1>
-        <h1>orignal title={titleOr}</h1>
-        <h1>{language}</h1>
-        <h1>
-          <Stars num={rating}></Stars>
-        </h1>
-        <div>
-          <img src={img} alt="film poster" />
-        </div>
+      <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        {side ? (
+          <BackCard
+            title={movie.title || movie.name}
+            titleOr={movie.original_movie || movie.original_name}
+          />
+        ) : (
+          <FrontCard img={movie.poster_path} />
+        )}
       </div>
     </>
   );
