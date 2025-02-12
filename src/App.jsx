@@ -1,13 +1,15 @@
-import { useState } from "react";
-
+import { useState, react } from "react";
+import NavBar from "./components/NavBar";
+import { SearchProvider } from "./contexts/MovieContext";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <h1>ciao</h1>
-      </div>
+      <SearchProvider>
+        <NavBar></NavBar>
+        <div>
+          <h1></h1>
+        </div>
+      </SearchProvider>
     </>
   );
 }
