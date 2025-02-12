@@ -8,8 +8,8 @@ export default function SearchBarPage() {
         return (
           <MovieCard
             key={elem.id}
-            title={elem.title}
-            titleOr={elem.original_title}
+            title={elem.title || elem.name}
+            titleOr={elem.original_title || elem.original_name}
             language={elem.original_language}
             rating={elem.vote_average}
           ></MovieCard>
