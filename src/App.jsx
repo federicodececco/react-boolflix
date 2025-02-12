@@ -4,10 +4,12 @@ import SearchPage from "./pages/SearchPage";
 function App() {
   return (
     <>
-      <SearchProvider>
-        <Header></Header>
-        <SearchPage></SearchPage>
-      </SearchProvider>
+      <div className="bg-gray-500 h-screen">
+        <SearchProvider>
+          <Header></Header>
+          <SearchPage></SearchPage>
+        </SearchProvider>
+      </div>
     </>
   );
 }

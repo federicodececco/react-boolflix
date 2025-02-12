@@ -54,7 +54,7 @@ export default function SearchBar() {
           setSearch(e.target.value);
         }}
       />
-      <button>cerca</button>
+      <button className="text-white ">cerca</button>
     </form>
   );
 }
