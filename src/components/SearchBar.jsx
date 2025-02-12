@@ -47,7 +47,8 @@ export default function SearchBar() {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        className="border-black border-solid"
+        className="bg-white text-sm px-2"
+        placeholder="search..."
         value={search}
         onChange={(e) => {
           setSearch(e.target.value);

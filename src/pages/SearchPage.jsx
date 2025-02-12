@@ -12,7 +12,7 @@ export default function SearchBarPage() {
             titleOr={elem.original_title || elem.original_name}
             language={elem.original_language}
             rating={elem.vote_average}
-            img={`https://image.tmdb.org/t/p/w200` + elem.poster_path}
+            img={`https://image.tmdb.org/t/p/w342` + elem.poster_path}
           ></MovieCard>
         );
       })}

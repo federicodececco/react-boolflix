@@ -1,12 +1,11 @@
-import { useState, react } from "react";
-import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import { SearchProvider } from "./contexts/MovieContext";
 import SearchPage from "./pages/SearchPage";
 function App() {
   return (
     <>
       <SearchProvider>
-        <NavBar></NavBar>
+        <Header></Header>
         <SearchPage></SearchPage>
       </SearchProvider>
     </>
