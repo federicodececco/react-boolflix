@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import Stars from './Stars'
 export default function BackCard({ title, vote, titleOr, overview }) {
   return (
