@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Stars from './Stars'
 export default function BackCard({ title, vote, titleOr, overview }) {
   return (
@@ -24,4 +25,19 @@ export default function BackCard({ title, vote, titleOr, overview }) {
       </div>
     </>
   )
+=======
+import Stars from "./Stars";
+export default function BackCard({ title, vote, titleOr }) {
+  return (
+    <>
+      <div className="py-4 text-white">
+        <h1 className="text-blue-600">{title}</h1>
+        <h1>{titleOr}</h1>
+        <h1>
+          <Stars num={vote}></Stars>
+        </h1>
+      </div>
+    </>
+  );
+>>>>>>> 58bf74ef7afedd52d43df5bb8b6551433f07aa1f
 }
