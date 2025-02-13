@@ -1,17 +1,17 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from 'react'
 
-const SearchDataContext = createContext();
+const SearchDataContext = createContext()
 
 const SearchProvider = ({ children }) => {
-  const [moviesList, setMoviesList] = useState([]);
+  const [tvMoviesList, setTvMoviesList] = useState({ films: [], tv: [] })
   return (
-    <SearchDataContext.Provider value={{ moviesList, setMoviesList }}>
+    <SearchDataContext.Provider value={{ tvMoviesList, setTvMoviesList }}>
       {children}
     </SearchDataContext.Provider>
-  );
-};
-function useMoviesContext() {
-  return useContext(SearchDataContext);
+  )
+}
+function useTvMoviesContext() {
+  return useContext(SearchDataContext)
 }
 
-export { SearchProvider, useMoviesContext };
+export { SearchProvider, useTvMoviesContext }

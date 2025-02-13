@@ -1,8 +1,8 @@
 import BackCard from './BackCard'
 import FrontCard from './frontCard'
 
-import React, { useState } from 'react'
-export default function MovieCard({ movie }) {
+import React, { useState, useEffect } from 'react'
+export default function MovieCard({ movieTv }) {
   const [side, setSide] = useState(false)
   const handleMouseEnter = () => {
     setSide(true)
@@ -10,6 +10,7 @@ export default function MovieCard({ movie }) {
   const handleMouseLeave = () => {
     setSide(false)
   }
+
   return (
     <>
       <div
@@ -19,13 +20,13 @@ export default function MovieCard({ movie }) {
       >
         {side ? (
           <BackCard
-            title={movie.title || movie.name}
-            titleOr={movie.original_title || movie.original_name}
-            vote={movie.vote_average}
-            overview={movie.overview}
+            title={movieTv.title || movieTv.name}
+            titleOr={movieTv.original_title || movieTv.original_name}
+            vote={movieTv.vote_average}
+            overview={movieTv.overview}
           />
         ) : (
-          <FrontCard img={movie.poster_path} />
+          <FrontCard img={movieTv.poster_path} />
         )}
       </div>
     </>
