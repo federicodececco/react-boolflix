@@ -1,6 +1,13 @@
 import Stars from './Stars'
 import { useState } from 'react'
-export default function BackCard({ title, vote, titleOr, overview, actors }) {
+export default function BackCard({
+  title,
+  vote,
+  titleOr,
+  overview,
+  actors,
+  genres,
+}) {
   return (
     <>
       <div className='h-100 border border-solid border-white bg-black px-3 py-4 text-white lg:h-125 xl:h-150'>
@@ -11,6 +18,16 @@ export default function BackCard({ title, vote, titleOr, overview, actors }) {
         <div>
           <span className='pr-2 font-bold text-white'>Titolo originale:</span>
           <span className='text-white'>{titleOr}</span>
+        </div>
+        <div>
+          <span className='pr-2 font-bold text-white'>Genre:</span>
+          <span className='text-white'>
+            {' '}
+            {genres.map((elem, index) => {
+              if (elem) return <>{elem.name},</>
+              else return
+            })}
+          </span>
         </div>
         <div>
           {' '}
